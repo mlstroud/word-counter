@@ -103,8 +103,20 @@ namespace WordCounter.Tests
       string expectedWord = "why";
       RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
 
-      //wordCounter.ParseWord();
       string result = wordCounter.RemovePunctuation(newWord);
+
+      Assert.AreEqual(expectedWord, result);
+    }
+
+    [TestMethod]
+    public void ParseWord_CallsRemovePunctuation_WordWithoutPunctuation()
+    {
+      string newWord = "Why!?,[]()&";
+      string expectedWord = "why";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
+
+      wordCounter.ParseWord();
+      string result = wordCounter.ParsedWord;
 
       Assert.AreEqual(expectedWord, result);
     }

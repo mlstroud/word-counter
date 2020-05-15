@@ -71,5 +71,17 @@ namespace WordCounter.Tests
 
       Assert.IsFalse(result);
     }
+
+    [TestMethod]
+    public void ParseWord_ConvertsWordToLowerCase_LowerCaseWord()
+    {
+      string newWord = "The";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
+
+      wordCounter.ParseWord();
+      string result = wordCounter.Word;
+
+      Assert.AreEqual(newWord.ToLower(), result);
+    }
   }
 }

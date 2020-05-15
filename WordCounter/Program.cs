@@ -20,12 +20,14 @@ namespace WordCounter
         if (!wordIsValid)
         {
           userWord = GetWord();
+          if (CheckForQuit(userWord)) break;
           wordIsValid = true;
         }
 
         if (!sentenceIsValid)
         {
           userSentence = GetSentence();
+          if (CheckForQuit(userSentence)) break;
           sentenceIsValid = true;
         }
 
@@ -33,14 +35,16 @@ namespace WordCounter
 
         if (!wordCount.ValidateWord())
         {
+          Console.Clear();
           Console.WriteLine("Sorry, your word \"" + userWord + "\" is invalid. Please try again.");
           wordIsValid = false;
         }
 
         if (!wordCount.ValidateSentence())
         {
-          Console.WriteLine("Sorry your sentence \"" + userSentence + "\"is invalid. Please try again.");
-          wordIsValid = false;
+          Console.Clear();
+          Console.WriteLine("Sorry your sentence \"" + userSentence + "\" is invalid. Please try again.");
+          sentenceIsValid = false;
         }
 
         if (wordIsValid && sentenceIsValid)
@@ -64,6 +68,19 @@ namespace WordCounter
       Console.Write("Enter a sentence: ");
       string input = Console.ReadLine();
       return input;
+    }
+
+    public static bool CheckForQuit(string input)
+    {
+      if (input.ToLower() == "esc")
+      {
+        Console.WriteLine("Thank you for using Word Counter. Goodbye.");
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
 
     public static void DisplayResults(RepeatCounter wordCount)

@@ -90,6 +90,7 @@ namespace WordCounter.Models
       return _matches.ContainsKey(ParsedWord) ? _matches[ParsedWord] : 0;
     }
 
+
     public void FindMatches()
     {
       string[] wordList = ParsedSentence.Split(" ");

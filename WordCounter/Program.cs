@@ -87,10 +87,13 @@ namespace WordCounter
     public static void DisplayResults(RepeatCounter wordCount)
     {
       Console.Clear();
-      Console.WriteLine("Searching your sentence for matches...");
       int wordTotalOccurrences = wordCount.GetWordCount();
       string[] sentenceOutput = wordCount.ParsedSentence.Split(" ");
       string[] originalSentence = wordCount.Sentence.Split(" ");
+
+      LoadResults();
+
+      Console.WriteLine("Searching your sentence for matches...");
 
       for (int word = 0; word < sentenceOutput.Length; word++)
       {
@@ -115,6 +118,11 @@ namespace WordCounter
       Console.WriteLine("------------------------------------------------------------------------------------");
       Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordTotalOccurrences + " times.");
       Console.WriteLine("------------------------------------------------------------------------------------");
+    }
+
+    public static void LoadResults()
+    {
+
     }
   }
 }

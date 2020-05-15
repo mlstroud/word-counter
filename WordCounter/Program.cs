@@ -119,7 +119,7 @@ namespace WordCounter
           Console.Write("\n");
         }
 
-        Thread.Sleep(150);
+        Thread.Sleep(125);
       }
 
       Console.ForegroundColor = ConsoleColor.White;
@@ -130,6 +130,7 @@ namespace WordCounter
       Console.ForegroundColor = ConsoleColor.White;
       Console.Write("\" appeared " + wordTotalOccurrences + " times.\n");
       Console.WriteLine("------------------------------------------------------------------------------------\n");
+      Console.CursorVisible = true;
     }
 
     public static void LoadResults()
@@ -146,9 +147,11 @@ namespace WordCounter
         progressBar[i] = ' ';
       }
 
+
       for (int i = 1; i < 101; i++)
       {
         Console.Clear();
+        Console.CursorVisible = false;
         Console.WriteLine("Parsing your data...please wait.");
 
         progressBar[i] = block;

@@ -51,11 +51,38 @@ namespace WordCounter.Models
     public void ParseWord()
     {
       ParsedWord = Word.ToLower();
+      ParsedWord = RemovePunctuation(ParsedWord);
     }
 
     public void ParseSentence()
     {
       ParsedSentence = Sentence.ToLower();
+
+      string[] words = ParsedSentence.Split(" ");
+
+      string SentenceWithoutPunctuation = "";
+
+      for (int word = 0; word < words.Length; word++)
+      {
+        words[word] = RemovePunctuation(words[word]);
+      }
+
+      ParsedSentence = string.Join(" ", words);
+    }
+
+    public string RemovePunctuation(string word)
+    {
+      string wordWithoutPunctuation = "";
+
+      foreach (char letter in word)
+      {
+        if (!char.IsPunctuation(letter))
+        {
+          wordWithoutPunctuation += letter;
+        }
+      }
+
+      return wordWithoutPunctuation;
     }
   }
 }

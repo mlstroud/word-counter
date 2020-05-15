@@ -10,11 +10,22 @@ namespace WordCounter.Tests
     public void Constructor_StoresWord_Word()
     {
       string newWord = "the";
-      RepeatCounter wordCounter = new RepeatCounter(newWord);
+      RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
 
       string result = wordCounter.Word;
 
       Assert.AreEqual(result, newWord);
+    }
+
+    [TestMethod]
+    public void Constructor_StoresSentence_Sentence()
+    {
+      string newSentence = "The man ate the cake";
+      RepeatCounter wordCounter = new RepeatCounter("test", newSentence);
+
+      string result = wordCounter.Sentence;
+
+      Assert.AreEqual(result, newSentence);
     }
   }
 }

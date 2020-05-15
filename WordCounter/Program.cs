@@ -125,37 +125,32 @@ namespace WordCounter
     {
 
       const char block = '■';
-      char[] progressBar = new char[102];
       int percentComplete = 0;
       Random random = new Random();
       int loadCycles = random.Next(7, 20);
       int loadPerCycle = 100 / loadCycles;
       int blocksToAdd = 0;
-
+      char[] progressBar = new char[102];
       progressBar[0] = '[';
       progressBar[101] = ']';
+
       for (int i = 1; i < 101; i++)
       {
         progressBar[i] = ' ';
       }
 
-      for (int i = 0; i < loadCycles; i++)
+
+      for (int i = 1; i < 101; i++)
       {
         Console.Clear();
         Console.WriteLine("Parsing your data...please wait.");
-
-        //int b = i * loadPerCycle;
-
-        for (int b = i * loadPerCycle; b < b + loadPerCycle; b++)
-        {
-          progressBar[b] = block;
-        }
+        progressBar[i] = block;
 
         string updatedProgressBar = new string(progressBar);
-        percentComplete += loadPerCycle;
+        percentComplete += 1;
         updatedProgressBar += percentComplete.ToString() + "%";
         Console.Write(updatedProgressBar);
-        Thread.Sleep(300);
+        Thread.Sleep(50);
       }
       Thread.Sleep(200);
       Console.Clear();

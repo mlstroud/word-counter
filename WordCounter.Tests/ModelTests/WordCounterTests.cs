@@ -133,5 +133,19 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(expectedSentence, result);
     }
+
+    [TestMethod]
+    public void Match_VerifiesIfFirstWordMatches_True()
+    {
+      string newWord = "The";
+      string newSentence = "The man ate the cake.";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, newSentence);
+
+      wordCounter.ParseWord();
+      wordCounter.ParseSentence();
+      bool result = wordCounter.Match(newWord, newSentence);
+
+      Assert.IsTrue(result);
+    }
   }
 }

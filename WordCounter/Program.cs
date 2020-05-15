@@ -1,4 +1,5 @@
 using System;
+using WordCounter.Models;
 
 namespace WordCounter
 {
@@ -7,13 +8,50 @@ namespace WordCounter
     public static void Main()
     {
       bool isFinished = false;
-      string userWord;
-      string userSentence;
+      string userWord = "";
+      string userSentence = "";
+      bool wordIsValid = false;
+      bool sentenceIsValid = false;
+      RepeatCounter wordCount;
 
       while (!isFinished)
       {
-        userWord = GetWord();
-        userSentence = GetSentence();
+        Console.WriteLine("Enter \"ESC\" at any time to quit.");
+        if (!wordIsValid)
+        {
+          userWord = GetWord();
+          wordIsValid = true;
+        }
+
+        if (!sentenceIsValid)
+        {
+          userSentence = GetSentence();
+          sentenceIsValid = true;
+        }
+
+        wordCount = new RepeatCounter(userWord, userSentence);
+
+        if (!wordCount.ValidateWord())
+        {
+          Console.WriteLine("Sorry, your word \"" + userWord + "\" is invalid. Please try again.");
+          wordIsValid = false;
+        }
+
+        if (!wordCount.ValidateSentence())
+        {
+          Console.WriteLine("Sorry your sentence \"" + userSentence + "\"is invalid. Please try again.");
+          wordIsValid = false;
+        }
+
+        if (wordIsValid && sentenceIsValid)
+        {
+          Console.Clear();
+          Console.WriteLine("------------------------------------------------------------------------------------");
+          Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordCount.GetWordCount() + " times.");
+          Console.WriteLine("------------------------------------------------------------------------------------");
+          wordIsValid = false;
+          sentenceIsValid = false;
+        }
       }
     }
 

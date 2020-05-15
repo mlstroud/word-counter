@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace WordCounter.Models
 {
   public class RepeatCounter
@@ -8,8 +6,6 @@ namespace WordCounter.Models
     public string ParsedWord { get; set; }
     public string Sentence { get; set; }
     public string ParsedSentence { get; set; }
-    private static List<char> _punctuation = new List<char> { '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
-      '+', '=', '[', ']', '|', '\\', ';', ':', '"', '\'', ',', '<', '>', '.', '?', '/' };
 
     public RepeatCounter(string word, string sentence)
     {

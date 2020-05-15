@@ -119,7 +119,7 @@ namespace WordCounter
           Console.Write("\n");
         }
 
-        Thread.Sleep(125);
+        Thread.Sleep(150);
       }
 
       Console.ForegroundColor = ConsoleColor.White;
@@ -166,7 +166,7 @@ namespace WordCounter
         Thread.Sleep(35);
       }
 
-      Console.WriteLine("\nProcessing...");
+      Console.WriteLine("\n\nProcessing...");
       Thread.Sleep(500);
       Console.Clear();
     }

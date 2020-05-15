@@ -6,7 +6,14 @@ namespace WordCounter
   {
     public static void Main()
     {
+      bool isFinished = false;
+      string userWord;
+      string userSentence;
 
+      while (!isFinished)
+      {
+
+      }
     }
   }
 }

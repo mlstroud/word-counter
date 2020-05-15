@@ -138,7 +138,7 @@ namespace WordCounter.Tests
     public void FindMatches_ComparesFirstWord_One()
     {
       string newWord = "The";
-      string newSentence = "The man ate the cake.";
+      string newSentence = "The man ate cake.";
       RepeatCounter wordCounter = new RepeatCounter(newWord, newSentence);
 
       wordCounter.ParseWord();

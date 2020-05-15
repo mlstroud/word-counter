@@ -141,9 +141,6 @@ namespace WordCounter.Tests
       string newSentence = "The man ate cake.";
       RepeatCounter wordCounter = new RepeatCounter(newWord, newSentence);
 
-      wordCounter.ParseWord();
-      wordCounter.ParseSentence();
-      wordCounter.FindMatches();
       int result = wordCounter.GetWordCount();
 
       Assert.AreEqual(1, result);
@@ -156,9 +153,6 @@ namespace WordCounter.Tests
       string newSentence = "The man ate the cake.";
       RepeatCounter wordCounter = new RepeatCounter(newWord, newSentence);
 
-      wordCounter.ParseWord();
-      wordCounter.ParseSentence();
-      wordCounter.FindMatches();
       int result = wordCounter.GetWordCount();
 
       Assert.AreEqual(2, result);

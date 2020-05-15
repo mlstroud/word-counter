@@ -87,6 +87,10 @@ namespace WordCounter.Models
 
     public int GetWordCount()
     {
+      ParseWord();
+      ParseSentence();
+      FindMatches();
+
       return _matches.ContainsKey(ParsedWord) ? _matches[ParsedWord] : 0;
     }
 

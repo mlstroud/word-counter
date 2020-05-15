@@ -95,13 +95,16 @@ namespace WordCounter.Models
     {
       string[] wordList = ParsedSentence.Split(" ");
 
-      if (_matches.ContainsKey(wordList[0]))
+      foreach (string word in wordList)
       {
-        _matches[wordList[0]]++;
-      }
-      else
-      {
-        _matches[wordList[0]] = 1;
+        if (_matches.ContainsKey(word))
+        {
+          _matches[word]++;
+        }
+        else
+        {
+          _matches[word] = 1;
+        }
       }
     }
   }

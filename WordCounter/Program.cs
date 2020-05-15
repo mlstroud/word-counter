@@ -154,7 +154,7 @@ namespace WordCounter
         progressBar[i] = block;
         string updatedProgressBar = new string(progressBar);
         percentComplete += 1;
-        updatedProgressBar += percentComplete.ToString() + "%";
+        updatedProgressBar += " " + percentComplete.ToString() + "%";
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write(updatedProgressBar);

@@ -83,5 +83,17 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(newWord.ToLower(), result);
     }
+
+    [TestMethod]
+    public void ParseSentence_ConvertsSentenceToLowerCase_LowerCaseSentence()
+    {
+      string newSentence = "The MAN ate the CAKE";
+      RepeatCounter wordCounter = new RepeatCounter("test", newSentence);
+
+      wordCounter.ParseSentence();
+      string result = wordCounter.Sentence;
+
+      Assert.AreEqual(newSentence.ToLower(), result);
+    }
   }
 }

@@ -97,14 +97,14 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void ParseWord_RemovesPunctuation_WordWithoutPunctuation()
+    public void RemovePunctuation_RemovesPunctuation_WordWithoutPunctuation()
     {
-      string newWord = "Why?";
+      string newWord = "why!?,[]()&";
       string expectedWord = "why";
       RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
 
-      wordCounter.ParseWord();
-      string result = wordCounter.ParsedWord;
+      //wordCounter.ParseWord();
+      string result = wordCounter.RemovePunctuation(newWord);
 
       Assert.AreEqual(expectedWord, result);
     }

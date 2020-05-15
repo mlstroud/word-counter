@@ -135,7 +135,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void FindMatches_UpdatesFirstWord_One()
+    public void FindMatches_ComparesFirstWord_One()
     {
       string newWord = "The";
       string newSentence = "The man ate the cake.";
@@ -147,6 +147,21 @@ namespace WordCounter.Tests
       int result = wordCounter.GetWordCount();
 
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void FindMatches_ComparesAllWords_Two()
+    {
+      string newWord = "The";
+      string newSentence = "The man ate the cake.";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, newSentence);
+
+      wordCounter.ParseWord();
+      wordCounter.ParseSentence();
+      wordCounter.FindMatches();
+      int result = wordCounter.GetWordCount();
+
+      Assert.AreEqual(2, result);
     }
   }
 }

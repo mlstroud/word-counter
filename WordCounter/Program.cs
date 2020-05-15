@@ -19,6 +19,7 @@ namespace WordCounter
       while (!isFinished)
       {
         Console.WriteLine("Enter \"ESC\" at any time to quit.");
+
         if (!wordIsValid)
         {
           userWord = GetWord();
@@ -62,6 +63,7 @@ namespace WordCounter
     {
       Console.Write("Enter a word: ");
       string input = Console.ReadLine();
+
       return input;
     }
 
@@ -69,6 +71,7 @@ namespace WordCounter
     {
       Console.Write("Enter a sentence: ");
       string input = Console.ReadLine();
+
       return input;
     }
 
@@ -77,6 +80,7 @@ namespace WordCounter
       if (input.ToLower() == "esc")
       {
         Console.WriteLine("Thank you for using Word Counter. Goodbye.");
+
         return true;
       }
       else
@@ -88,6 +92,7 @@ namespace WordCounter
     public static void DisplayResults(RepeatCounter wordCount)
     {
       Console.Clear();
+
       int wordTotalOccurrences = wordCount.GetWordCount();
       string[] sentenceOutput = wordCount.ParsedSentence.Split(" ");
       string[] originalSentence = wordCount.Sentence.Split(" ");
@@ -113,6 +118,7 @@ namespace WordCounter
         {
           Console.Write("\n");
         }
+
         Thread.Sleep(150);
       }
 
@@ -149,10 +155,11 @@ namespace WordCounter
         string updatedProgressBar = new string(progressBar);
         percentComplete += 1;
         updatedProgressBar += percentComplete.ToString() + "%";
+
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write(updatedProgressBar);
-        Thread.Sleep(50);
         Console.ForegroundColor = ConsoleColor.White;
+        Thread.Sleep(50);
       }
 
       Thread.Sleep(200);

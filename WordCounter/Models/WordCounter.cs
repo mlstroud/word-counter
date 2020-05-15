@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
   public class RepeatCounter
@@ -6,11 +8,13 @@ namespace WordCounter.Models
     public string ParsedWord { get; set; }
     public string Sentence { get; set; }
     public string ParsedSentence { get; set; }
+    private Dictionary<string, int> _matches;
 
     public RepeatCounter(string word, string sentence)
     {
       Word = word;
       Sentence = sentence;
+      _matches = new Dictionary<string, int>();
     }
 
     public bool ValidateWord()
@@ -79,6 +83,25 @@ namespace WordCounter.Models
       }
 
       return wordWithoutPunctuation;
+    }
+
+    public int GetWordCount()
+    {
+      return _matches.ContainsKey(ParsedWord) ? _matches[ParsedWord] : 0;
+    }
+
+    public void FindMatches()
+    {
+      string[] wordList = ParsedSentence.Split(" ");
+
+      if (_matches.ContainsKey(wordList[0]))
+      {
+        _matches[wordList[0]]++;
+      }
+      else
+      {
+        _matches[wordList[0]] = 1;
+      }
     }
   }
 }

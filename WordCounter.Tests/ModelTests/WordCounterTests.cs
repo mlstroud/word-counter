@@ -38,5 +38,16 @@ namespace WordCounter.Tests
 
       Assert.IsTrue(result);
     }
+
+    [TestMethod]
+    public void ValidateWord_ReturnsValidWord_False()
+    {
+      string newWord = "th6e";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
+
+      bool result = wordCounter.ValidateWord();
+
+      Assert.IsFalse(result);
+    }
   }
 }

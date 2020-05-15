@@ -45,10 +45,7 @@ namespace WordCounter
 
         if (wordIsValid && sentenceIsValid)
         {
-          Console.Clear();
-          Console.WriteLine("------------------------------------------------------------------------------------");
-          Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordCount.GetWordCount() + " times.");
-          Console.WriteLine("------------------------------------------------------------------------------------");
+          DisplayResults(wordCount);
           wordIsValid = false;
           sentenceIsValid = false;
         }
@@ -67,6 +64,14 @@ namespace WordCounter
       Console.Write("Enter a sentence: ");
       string input = Console.ReadLine();
       return input;
+    }
+
+    public static void DisplayResults(RepeatCounter wordCount)
+    {
+      Console.Clear();
+      Console.WriteLine("------------------------------------------------------------------------------------");
+      Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordCount.GetWordCount() + " times.");
+      Console.WriteLine("------------------------------------------------------------------------------------");
     }
   }
 }

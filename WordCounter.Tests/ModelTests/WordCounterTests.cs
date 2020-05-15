@@ -163,5 +163,17 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(2, result);
     }
+
+    [TestMethod]
+    public void GetWordCount_PerformsAllActions_WordCount()
+    {
+      string newWord = "The";
+      string newSentence = "The MAN ate the CAKE!!!";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, newSentence);
+
+      int result = wordCounter.GetWordCount();
+
+      Assert.AreEqual(2, result);
+    }
   }
 }

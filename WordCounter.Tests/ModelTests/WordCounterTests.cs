@@ -79,7 +79,7 @@ namespace WordCounter.Tests
       RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
 
       wordCounter.ParseWord();
-      string result = wordCounter.Word;
+      string result = wordCounter.ParsedWord;
 
       Assert.AreEqual(newWord.ToLower(), result);
     }
@@ -91,7 +91,7 @@ namespace WordCounter.Tests
       RepeatCounter wordCounter = new RepeatCounter("test", newSentence);
 
       wordCounter.ParseSentence();
-      string result = wordCounter.Sentence;
+      string result = wordCounter.ParsedSentence;
 
       Assert.AreEqual(newSentence.ToLower(), result);
     }
@@ -104,7 +104,7 @@ namespace WordCounter.Tests
       RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
 
       wordCounter.ParseWord();
-      string result = wordCounter.Word;
+      string result = wordCounter.ParsedWord;
 
       Assert.AreEqual(expectedWord, result);
     }

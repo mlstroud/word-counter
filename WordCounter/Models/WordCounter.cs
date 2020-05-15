@@ -1,9 +1,15 @@
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
   public class RepeatCounter
   {
     public string Word { get; set; }
+    public string ParsedWord { get; set; }
     public string Sentence { get; set; }
+    public string ParsedSentence { get; set; }
+    private static List<char> _punctuation = new List<char> { '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+      '+', '=', '[', ']', '|', '\\', ';', ':', '"', '\'', ',', '<', '>', '.', '?', '/' };
 
     public RepeatCounter(string word, string sentence)
     {
@@ -44,12 +50,12 @@ namespace WordCounter.Models
 
     public void ParseWord()
     {
-      Word = Word.ToLower();
+      ParsedWord = Word.ToLower();
     }
 
     public void ParseSentence()
     {
-      Sentence = Sentence.ToLower();
+      ParsedSentence = Sentence.ToLower();
     }
   }
 }

@@ -27,5 +27,16 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(result, newSentence);
     }
+
+    [TestMethod]
+    public void ValidateWord_ReturnsValidWord_True()
+    {
+      string newWord = "the";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
+
+      bool result = wordCounter.ValidateWord();
+
+      Assert.IsTrue(result);
+    }
   }
 }

@@ -23,5 +23,10 @@ namespace WordCounter.Models
 
       return true;
     }
+
+    public bool ValidateSentence()
+    {
+      return false;
+    }
   }
 }

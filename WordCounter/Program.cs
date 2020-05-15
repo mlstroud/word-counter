@@ -94,7 +94,7 @@ namespace WordCounter
 
       LoadResults();
 
-      Console.WriteLine("Searching your sentence for matches...");
+      Console.WriteLine("Displaying your matches...\n");
 
       for (int word = 0; word < sentenceOutput.Length; word++)
       {
@@ -123,13 +123,9 @@ namespace WordCounter
 
     public static void LoadResults()
     {
-
+      Random random = new Random();
       const char block = '■';
       int percentComplete = 0;
-      Random random = new Random();
-      int loadCycles = random.Next(7, 20);
-      int loadPerCycle = 100 / loadCycles;
-      int blocksToAdd = 0;
       char[] progressBar = new char[102];
       progressBar[0] = '[';
       progressBar[101] = ']';
@@ -139,19 +135,20 @@ namespace WordCounter
         progressBar[i] = ' ';
       }
 
-
       for (int i = 1; i < 101; i++)
       {
         Console.Clear();
         Console.WriteLine("Parsing your data...please wait.");
-        progressBar[i] = block;
 
+        progressBar[i] = block;
         string updatedProgressBar = new string(progressBar);
         percentComplete += 1;
         updatedProgressBar += percentComplete.ToString() + "%";
+
         Console.Write(updatedProgressBar);
         Thread.Sleep(50);
       }
+
       Thread.Sleep(200);
       Console.Clear();
     }

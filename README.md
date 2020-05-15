@@ -32,7 +32,7 @@ _The application will return and display the amount of times the search word occ
 | The program will compare the search word vs the rest of the sentence.   | "the" vs "ate", "the", "cake" | False, True, False (the:1) |
 
 ## Setup/Installation Requirements
-> This application required the .NETCore SDK - [Find your version here](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+> This application requires the .NETCore SDK - [Find your version here](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
 1. Create a WordCounter.Solution directory.
 ```

@@ -95,5 +95,18 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(newSentence.ToLower(), result);
     }
+
+    [TestMethod]
+    public void ParseWord_RemovesPunctuation_WordWithoutPunctuation()
+    {
+      string newWord = "Why?";
+      string expectedWord = "why";
+      RepeatCounter wordCounter = new RepeatCounter(newWord, "test");
+
+      wordCounter.ParseWord();
+      string result = wordCounter.Word;
+
+      Assert.AreEqual(expectedWord, result);
+    }
   }
 }

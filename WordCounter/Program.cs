@@ -129,7 +129,7 @@ namespace WordCounter
       Console.Write(wordCount.Word);
       Console.ForegroundColor = ConsoleColor.White;
       Console.Write("\" appeared " + wordTotalOccurrences + " times.\n");
-      Console.WriteLine("------------------------------------------------------------------------------------");
+      Console.WriteLine("------------------------------------------------------------------------------------\n");
     }
 
     public static void LoadResults()

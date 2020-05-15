@@ -41,5 +41,10 @@ namespace WordCounter.Models
 
       return true;
     }
+
+    public void ParseWord()
+    {
+      Word = Word.ToLower();
+    }
   }
 }

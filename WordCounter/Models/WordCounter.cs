@@ -10,5 +10,18 @@ namespace WordCounter.Models
       Word = word;
       Sentence = sentence;
     }
+
+    public bool ValidateWord()
+    {
+      foreach (char letter in Word)
+      {
+        if (char.IsDigit(letter))
+        {
+          return false;
+        }
+      }
+
+      return true;
+    }
   }
 }

@@ -49,5 +49,16 @@ namespace WordCounter.Tests
 
       Assert.IsFalse(result);
     }
+
+    [TestMethod]
+    public void ValidateSentence_ReturnsValidSentence_True()
+    {
+      string newSentence = "The man ate the cake";
+      RepeatCounter wordCounter = new RepeatCounter("test", newSentence);
+
+      bool result = wordCounter.ValidateSentence();
+
+      Assert.IsTrue(result);
+    }
   }
 }

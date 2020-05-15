@@ -60,5 +60,16 @@ namespace WordCounter.Tests
 
       Assert.IsTrue(result);
     }
+
+    [TestMethod]
+    public void ValidateSentence_ReturnsValidSentence_False()
+    {
+      string newSentence = "The m4n at3e the cake";
+      RepeatCounter wordCounter = new RepeatCounter("test", newSentence);
+
+      bool result = wordCounter.ValidateSentence();
+
+      Assert.IsFalse(result);
+    }
   }
 }

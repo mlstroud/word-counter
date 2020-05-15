@@ -21,11 +21,12 @@ _The application will return and display the amount of times the search word occ
 | The program will accept a sentence as input.                            | "He ate the cake."            | "He ate the cake."            |
 | The program will validate input word.                                   | "The3"                        | Error                         |
 | The program will validate input sentence.                               | "He ate5 cakes."              | Error                         |
-| The program will treat stand alone numbers as valid.                    | "He ate 5 cakes."             | "He ate 5 cakes."             |
-| The program will convert the inputs to lowercase.                       | "The", "He ate the cake."     | "the", "he ate the cake."     |
-| The program will remove punctuation from the inputs.                    | "The", "He ate the cake."     | "the", "he ate the cake"      |
-| The program will compare the search word vs the first word in sentence. | "the" vs "he"                 | False (the = 0)               |
-| The program will compare the search word vs the rest of the sentence.   | "the" vs "ate", "the", "cake" | False, True, False (the =  1) |
+| The program will convert the input word to lowercase.                   | "The"                         | "the"                         |
+| The program will convert the input sentence to lowercase.               | "He ATE the cake."            | "he ate the cake."            |
+| The program will remove punctuation from input word.                    | "The!"                        | "the"                         |
+| The program will remove punctuation from input sentence.                | "He ate the cake."            | "he ate the cake"             |
+| The program will compare the search word vs the first word in sentence. | "the" vs "he"                 | False (the:0)               |
+| The program will compare the search word vs the rest of the sentence.   | "the" vs "ate", "the", "cake" | False, True, False (the:1) |
 
 ## Setup/Installation Requirements
 > This application required the .NETCore SDK - [Find your version here](https://dotnet.microsoft.com/download/dotnet-core/2.2)

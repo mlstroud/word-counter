@@ -94,7 +94,7 @@ namespace WordCounter
 
       LoadResults();
 
-      Console.WriteLine("Displaying your matches...\n");
+      Console.WriteLine("Getting your matches...\n");
 
       for (int word = 0; word < sentenceOutput.Length; word++)
       {
@@ -115,9 +115,14 @@ namespace WordCounter
         }
         Thread.Sleep(150);
       }
+
       Console.ForegroundColor = ConsoleColor.White;
       Console.WriteLine("------------------------------------------------------------------------------------");
-      Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordTotalOccurrences + " times.");
+      Console.Write("The word \"");
+      Console.ForegroundColor = ConsoleColor.Green;
+      Console.Write(wordCount.Word);
+      Console.ForegroundColor = ConsoleColor.White;
+      Console.Write("\" appeared " + wordTotalOccurrences + " times.\n");
       Console.WriteLine("------------------------------------------------------------------------------------");
     }
 

@@ -14,7 +14,7 @@ namespace WordCounter.Tests
 
       string result = wordCounter.Word;
 
-      Assert.AreEqual(result, newWord);
+      Assert.AreEqual(newWord, result);
     }
 
     [TestMethod]
@@ -25,7 +25,7 @@ namespace WordCounter.Tests
 
       string result = wordCounter.Sentence;
 
-      Assert.AreEqual(result, newSentence);
+      Assert.AreEqual(newSentence, result);
     }
 
     [TestMethod]
@@ -119,6 +119,19 @@ namespace WordCounter.Tests
       string result = wordCounter.ParsedWord;
 
       Assert.AreEqual(expectedWord, result);
+    }
+
+    [TestMethod]
+    public void ParseSentence_CallsRemovePunctuationOnEveryWord_SentenceWithoutPunctuation()
+    {
+      string newSentence = "He ate the Cake! Why?!?!";
+      string expectedSentence = "he ate the cake why";
+      RepeatCounter wordCounter = new RepeatCounter("test", newSentence);
+
+      wordCounter.ParseSentence();
+      string result = wordCounter.ParsedSentence;
+
+      Assert.AreEqual(expectedSentence, result);
     }
   }
 }

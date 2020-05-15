@@ -150,8 +150,8 @@ namespace WordCounter
 
       for (int i = 1; i < 101; i++)
       {
-        Console.Clear();
         Console.CursorVisible = false;
+        Console.SetCursorPosition(0, 0);
         Console.WriteLine("Parsing your data...please wait.");
 
         progressBar[i] = block;
@@ -160,12 +160,14 @@ namespace WordCounter
         updatedProgressBar += " " + percentComplete.ToString() + "%";
 
         Console.ForegroundColor = ConsoleColor.Green;
+        Console.SetCursorPosition(0, 1);
         Console.Write(updatedProgressBar);
         Console.ForegroundColor = ConsoleColor.White;
-        Thread.Sleep(50);
+        Thread.Sleep(35);
       }
 
-      Thread.Sleep(200);
+      Console.WriteLine("\nProcessing...");
+      Thread.Sleep(500);
       Console.Clear();
     }
   }

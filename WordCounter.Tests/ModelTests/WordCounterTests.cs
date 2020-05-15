@@ -135,7 +135,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Match_VerifiesIfFirstWordMatches_True()
+    public void FindMatches_UpdatesFirstWord_One()
     {
       string newWord = "The";
       string newSentence = "The man ate the cake.";
@@ -143,9 +143,10 @@ namespace WordCounter.Tests
 
       wordCounter.ParseWord();
       wordCounter.ParseSentence();
-      bool result = wordCounter.Match(newWord, newSentence);
+      wordCounter.FindMatches();
+      int result = wordCounter.GetWordCount();
 
-      Assert.IsTrue(result);
+      Assert.AreEqual(1, result);
     }
   }
 }

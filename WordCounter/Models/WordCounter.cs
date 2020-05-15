@@ -57,10 +57,7 @@ namespace WordCounter.Models
     public void ParseSentence()
     {
       ParsedSentence = Sentence.ToLower();
-
       string[] words = ParsedSentence.Split(" ");
-
-      string SentenceWithoutPunctuation = "";
 
       for (int word = 0; word < words.Length; word++)
       {

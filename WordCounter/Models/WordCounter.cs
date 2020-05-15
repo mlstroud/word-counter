@@ -46,5 +46,10 @@ namespace WordCounter.Models
     {
       Word = Word.ToLower();
     }
+
+    public void ParseSentence()
+    {
+      Sentence = Sentence.ToLower();
+    }
   }
 }

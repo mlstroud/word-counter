@@ -16,6 +16,8 @@ namespace WordCounter
       bool sentenceIsValid = false;
       RepeatCounter wordCount;
 
+      Console.Clear();
+
       while (!isFinished)
       {
         Console.WriteLine("Enter \"ESC\" at any time to quit.");

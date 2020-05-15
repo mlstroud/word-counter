@@ -15,7 +15,7 @@ _The application will take two inputs from the user:_
 _The application will return and display the amount of times the search word occured in the first input._
 
 ## Demo
-![Gif of application running](./demogif/wordorder.gif)
+![Gif of application running](https://raw.githubusercontent.com/mlstroud/word-counter/master/demogif/wordcounter.gif)
 
 ## Specs
 | Behavior                                                                | Input                         | Output                        |

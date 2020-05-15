@@ -90,6 +90,7 @@ namespace WordCounter
       Console.WriteLine("Searching your sentence for matches...");
       int wordTotalOccurrences = wordCount.GetWordCount();
       string[] sentenceOutput = wordCount.ParsedSentence.Split(" ");
+      string[] originalSentence = wordCount.Sentence.Split(" ");
 
       for (int word = 0; word < sentenceOutput.Length; word++)
       {
@@ -102,7 +103,8 @@ namespace WordCounter
           Console.ForegroundColor = ConsoleColor.White;
         }
 
-        Console.Write(sentenceOutput[word] + " ");
+        Console.Write(originalSentence[word] + " ");
+
         if (word == sentenceOutput.Length - 1)
         {
           Console.Write("\n");

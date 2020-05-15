@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
 using WordCounter.Models;
-using System.Collections.Generic;
 
 namespace WordCounter
 {

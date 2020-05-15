@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using WordCounter.Models;
 
 namespace WordCounter
@@ -86,8 +87,31 @@ namespace WordCounter
     public static void DisplayResults(RepeatCounter wordCount)
     {
       Console.Clear();
+      Console.WriteLine("Searching your sentence for matches...");
+      int wordTotalOccurrences = wordCount.GetWordCount();
+      string[] sentenceOutput = wordCount.ParsedSentence.Split(" ");
+
+      for (int word = 0; word < sentenceOutput.Length; word++)
+      {
+        if (sentenceOutput[word] == wordCount.ParsedWord)
+        {
+          Console.ForegroundColor = ConsoleColor.Green;
+        }
+        else
+        {
+          Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        Console.Write(sentenceOutput[word] + " ");
+        if (word == sentenceOutput.Length - 1)
+        {
+          Console.Write("\n");
+        }
+        Thread.Sleep(100);
+      }
+      Console.ForegroundColor = ConsoleColor.White;
       Console.WriteLine("------------------------------------------------------------------------------------");
-      Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordCount.GetWordCount() + " times.");
+      Console.WriteLine("The word \"" + wordCount.Word + "\" appeared " + wordTotalOccurrences + " times.");
       Console.WriteLine("------------------------------------------------------------------------------------");
     }
   }

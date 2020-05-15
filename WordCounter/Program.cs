@@ -12,8 +12,15 @@ namespace WordCounter
 
       while (!isFinished)
       {
-
+        userWord = GetWord();
       }
+    }
+
+    public static string GetWord()
+    {
+      Console.Write("Enter a word: ");
+      string input = Console.ReadLine();
+      return input;
     }
   }
 }

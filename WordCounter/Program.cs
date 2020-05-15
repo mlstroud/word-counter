@@ -20,7 +20,8 @@ namespace WordCounter
 
       while (!isFinished)
       {
-        Console.WriteLine("Enter \"ESC\" at any time to quit.");
+        Console.WriteLine("Search a sentence or paragraph to find how often your word occurs:");
+        Console.WriteLine("Enter \"ESC\" at any time to quit.\n");
 
         if (!wordIsValid)
         {

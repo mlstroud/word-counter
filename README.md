@@ -34,11 +34,15 @@ _The application will return and display the amount of times the search word occ
 ```
 mkdir WordCounter.Solution
 ```
-2. Clone this repository to your directory.
+2. Navigate inside your new directory.
+```
+cd WordCounter.Solution
+```
+3. Clone this repository to your directory.
 ```
 git clone https://github.com/mlstroud/word-counter.git
 ```
-3. Run the application with the following command:
+4. Run the application with the following command:
 ```
 dotnet run
 ```

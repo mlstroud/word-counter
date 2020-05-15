@@ -26,7 +26,20 @@ namespace WordCounter.Models
 
     public bool ValidateSentence()
     {
-      return false;
+      string[] words = Sentence.Split(" ");
+
+      foreach (string word in words)
+      {
+        foreach (char letter in word)
+        {
+          if (char.IsDigit(letter))
+          {
+            return false;
+          }
+        }
+      }
+
+      return true;
     }
   }
 }
